@@ -1,84 +1,110 @@
-<p align="center">
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=190&color=0:0D1117,50:1F6FEB,100:8250DF&text=Delivery%20Planner&fontSize=42&fontColor=FFFFFF&fontAlignY=38&desc=Planning%20%E2%80%A2%20Governance%20%E2%80%A2%20Forecasting&descSize=16&descAlignY=60" />
-</p>
+<p align="center"><img src="./assets/hero.svg" width="100%" alt="Delivery Planner"/></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Drizzle-C5F74F?style=for-the-badge&logo=drizzle&logoColor=000" />
-  <img src="https://img.shields.io/badge/OpenAPI-6BA539?style=for-the-badge&logo=openapiinitiative&logoColor=white" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Drizzle-C5F74F?style=flat-square&logo=drizzle&logoColor=000"/>
+  <img src="https://img.shields.io/badge/OpenAPI-6BA539?style=flat-square&logo=openapiinitiative&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
 </p>
 
-# Delivery Planner — public engineering showcase
+# Delivery Planner
 
-A provider-neutral workspace for **planning, delivery governance, resource capacity, forecasting and portfolio visibility**.
+A planning and governance product I built to answer the questions execution trackers usually blur together: **what is estimated, what is staffed, what is forecast, what is approved, and why**.
 
-The production repository is private. This public repository documents the architecture, engineering decisions and selected sanitised examples without publishing proprietary implementation.
+> The full source stays private. This repo is the public engineering surface: architecture, domain model, trade-offs and sanitised examples.
 
-## Why this project exists
+## <code>01 / what_i_built</code>
 
-Execution systems are good at recording work. They are usually weaker at answering:
+<table>
+<tr>
+<td width="33%" valign="top">
 
-- What is actually committed?
-- What is only a forecast?
-- Which demand is covered by real capacity?
-- Which dependencies can move the date?
-- What changed since the approved baseline?
-- Which decisions can be traced back to their inputs?
+### Planning engine
 
-Delivery Planner separates those concepts instead of collapsing them into a single "status".
+Resource demand, capacity, scenarios, baselines and forecast inputs are separate domain concepts.
 
-## Architecture
+</td>
+<td width="33%" valign="top">
 
-```mermaid
+### Provider boundary
+
+Execution tools plug in through explicit capabilities instead of leaking provider-specific assumptions everywhere.
+
+</td>
+<td width="33%" valign="top">
+
+### Governance layer
+
+Risks, issues, changes, decisions, milestones and release readiness live next to the plan, not in a disconnected spreadsheet.
+
+</td>
+</tr>
+</table>
+
+## <code>02 / system_map</code>
+
+~~~mermaid
 flowchart LR
-    U[Web client] --> A[Versioned REST API]
-    A --> D[(PostgreSQL)]
-    A --> P[Planning & governance domain]
-    A --> R[Provider registry]
-    W[Background worker] --> D
-    W --> R
-    R --> J[Jira adapter]
-    R --> X[Other provider boundaries]
-    P --> F[Forecasts / scenarios / baselines]
-```
+    UI[Next.js product shell]
+    API[Versioned REST API]
+    DOMAIN[Planning / governance domain]
+    PG[(PostgreSQL)]
+    WORKER[Background worker]
+    REG[Provider registry]
+    JIRA[Jira adapter]
+    FUTURE[Future providers]
 
-### Core design
+    UI --> API
+    API --> DOMAIN
+    DOMAIN --> PG
+    WORKER --> PG
+    DOMAIN --> REG
+    WORKER --> REG
+    REG --> JIRA
+    REG --> FUTURE
+~~~
 
-- **Modular monolith**: Next.js application + Node background worker.
-- **PostgreSQL + Drizzle** for persistent domain state.
-- **Versioned REST/OpenAPI** contract.
-- **Provider adapter boundary** so execution systems do not own planning semantics.
-- Explicit separation of **estimate, demand, allocation, scenario, forecast and baseline**.
-- Append-only revisions for decision-relevant facts.
-- Tenant-aware permissions, audit events and integration-token handling.
-- Integration, E2E, schema, security and release checks in CI.
+## <code>03 / the_hard_parts</code>
 
-## Engineering highlights
-
-| Area | Approach |
+| Problem | Design choice |
 |---|---|
-| Planning | Deterministic resource-constrained scenarios |
-| Capacity | Explicit demand, allocation and partial coverage |
-| Governance | Risks, issues, changes, decisions, escalations |
-| Forecasting | Reproducible inputs + as-of basis + warnings |
-| Integrations | Provider capability registry + adapter boundary |
-| Security | Server-side permissions, tenancy checks, auditability |
-| Delivery | Baselines are approved facts; forecasts remain forecasts |
+| Forecasts turning into accidental commitments | Forecast and approved baseline are different objects |
+| “We need 2 backend devs” becoming “John is allocated” | Demand, allocation and coverage stay separate |
+| Missing data becoming green dashboards | Unknown remains a first-class state |
+| Provider limitations hidden by the UI | Capability registry reports available / partial / unavailable |
+| Derived dates nobody can explain | Forecasts retain inputs, as-of basis, policy and warnings |
+| Multi-tenant admin shortcuts | Server-side permissions + audit + tenancy-aware access |
 
-## A principle I care about
+## <code>04 / product_surface</code>
 
-> **Unknown is a state, not zero.**
+- Portfolio / project shell
+- planning and scenario revisions
+- resource demand and allocation coverage
+- approved baselines
+- risks / issues / change requests
+- requirements / decisions / traceability
+- release readiness and governance policies
+- provider-neutral execution boundary
+- audit and permission model
+- integration / E2E / migration / security / release checks
 
-Missing capacity, missing provider capability or missing forecast evidence should stay visible instead of silently turning into a green dashboard.
+## <code>05 / rule_zero</code>
 
-## Repository map
+> **Unknown is not zero. Forecast is not baseline. Estimate is not commitment.**
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Domain model](docs/DOMAIN_MODEL.md)
-- [Sanitised provider adapter example](examples/provider-adapter.ts)
+A lot of planning software becomes misleading because it simplifies those differences away. I built the model around keeping them visible.
 
-## Source availability
+## <code>06 / technical_proof</code>
 
-This is a **showcase repository**, not the full product source. The private codebase contains the complete application, migrations, tests, deployment configuration and integration logic.
+- [Architecture deep dive](docs/ARCHITECTURE.md)
+- [Simplified domain model](docs/DOMAIN_MODEL.md)
+- [Sanitised provider adapter](examples/provider-adapter.ts)
+
+<details>
+<summary><b>Why the full source is private</b></summary>
+
+The real repository contains the complete application, migrations, tests, deployment configuration and integration logic. I want the engineering to be inspectable without turning the product itself into open source.
+
+</details>
