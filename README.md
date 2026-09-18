@@ -42,6 +42,10 @@ Estimate is not commitment. Demand is not allocation. Forecast is not baseline.
 
 > **Rule zero:** unknown is not zero.
 
+<p align="center">
+  <img src="./assets/engineering-signature.svg" width="100%" alt="Engineering signature"/>
+</p>
+
 ## <code>05 / inspect</code>
 
 - [Architecture deep dive](docs/ARCHITECTURE.md)
