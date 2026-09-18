@@ -15,6 +15,10 @@ A planning and governance product I built to answer the questions execution trac
 
 > The full source stays private. This repo is the public engineering surface: architecture, domain model, trade-offs and sanitised examples.
 
+<p align="center">
+  <img src="./assets/overview.svg" width="100%" alt="System overview"/>
+</p>
+
 ## <code>01 / what_i_built</code>
 
 <table>
