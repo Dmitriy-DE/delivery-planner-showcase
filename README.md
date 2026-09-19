@@ -20,17 +20,21 @@ Estimate is not commitment. Demand is not allocation. Forecast is not baseline.
 
 <p align="center"><img src="./assets/features.svg" width="100%" alt="Delivery Planner features"/></p>
 
-## <code>02 / system</code>
+## <code>02 / core_model</code>
+
+<p align="center"><img src="./assets/core-model.svg" width="100%" alt="Core planning model"/></p>
+
+## <code>03 / system</code>
 
 <p align="center"><img src="./assets/architecture-visual.svg" width="100%" alt="Delivery Planner architecture"/></p>
 
 <p align="center"><img src="./assets/overview.svg" width="100%" alt="Delivery Planner system overview"/></p>
 
-## <code>03 / decision_path</code>
+## <code>04 / decision_path</code>
 
 <p align="center"><img src="./assets/flow-visual.svg" width="100%" alt="Delivery Planner decision flow"/></p>
 
-## <code>04 / hard_parts</code>
+## <code>05 / hard_parts</code>
 
 | Problem | Design choice |
 |---|---|
@@ -42,11 +46,13 @@ Estimate is not commitment. Demand is not allocation. Forecast is not baseline.
 
 > **Rule zero:** unknown is not zero.
 
+## <code>06 / engineering_signature</code>
+
 <p align="center">
   <img src="./assets/engineering-signature.svg" width="100%" alt="Engineering signature"/>
 </p>
 
-## <code>05 / inspect</code>
+## <code>07 / inspect</code>
 
 - [Architecture deep dive](docs/ARCHITECTURE.md)
 - [Simplified domain model](docs/DOMAIN_MODEL.md)
