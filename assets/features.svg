@@ -1,43 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410">
-<defs><linearGradient id="g"><stop stop-color="#58a6ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient></defs>
-<rect width="1200" height="410" rx="26" fill="#0d1117" stroke="#30363d"/>
-<text x="55" y="60" fill="#f0f6fc" font-family="Arial" font-size="24" font-weight="700">What is inside</text>
+<defs><linearGradient id="g"><stop stop-color="#3a5bd9"/><stop offset="1" stop-color="#6976d8"/></linearGradient></defs>
+<rect width="1200" height="410" rx="26" fill="#ffffff" stroke="#e3e6ec"/>
+<text x="55" y="60" fill="#131722" font-family="Arial" font-size="24" font-weight="700">What is inside</text>
 <rect x="55" y="78" width="240" height="4" rx="2" fill="url(#g)"/>
 <g transform="translate(55 105)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#58a6ff"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Planning engine</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">demand · capacity · scenarios</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">baselines · forecasts</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#3a5bd9"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Planning engine</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">demand · capacity · scenarios</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">baselines · forecasts</text>
 </g><g transform="translate(425 105)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#a371f7"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Provider boundary</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">capability registry</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">adapter contracts</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#6976d8"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Provider boundary</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">capability registry</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">adapter contracts</text>
 </g><g transform="translate(795 105)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#58a6ff"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Governance</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">risks · issues · changes</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">decisions · readiness</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#3a5bd9"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Governance</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">risks · issues · changes</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">decisions · readiness</text>
 </g><g transform="translate(55 250)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#a371f7"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Auditability</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">append-only revisions</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">actor · basis · time</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#6976d8"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Auditability</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">append-only revisions</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">actor · basis · time</text>
 </g><g transform="translate(425 250)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#58a6ff"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Security</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">tenancy-aware access</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">server-side permissions</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#3a5bd9"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Security</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">tenancy-aware access</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">server-side permissions</text>
 </g><g transform="translate(795 250)">
-<rect width="340" height="118" rx="18" fill="#111827" stroke="#30363d"/>
-<rect x="0" y="0" width="6" height="118" rx="3" fill="#a371f7"/>
-<text x="26" y="38" fill="#f0f6fc" font-family="Arial" font-size="17" font-weight="700">Quality gates</text>
-<text x="26" y="67" fill="#8b949e" font-family="monospace" font-size="11">integration · E2E</text>
-<text x="26" y="88" fill="#8b949e" font-family="monospace" font-size="11">schema · security · release</text>
+<rect width="340" height="118" rx="18" fill="#f7f8fa" stroke="#e3e6ec"/>
+<rect x="0" y="0" width="6" height="118" rx="3" fill="#6976d8"/>
+<text x="26" y="38" fill="#131722" font-family="Arial" font-size="17" font-weight="700">Quality gates</text>
+<text x="26" y="67" fill="#7b8494" font-family="monospace" font-size="11">integration · E2E</text>
+<text x="26" y="88" fill="#7b8494" font-family="monospace" font-size="11">schema · security · release</text>
 </g>
 </svg>
