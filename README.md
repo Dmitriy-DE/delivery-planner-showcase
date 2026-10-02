@@ -2,102 +2,42 @@
 
 <table>
 <tr>
-<td width="50%" valign="top">
-
-### What it is
-
-A provider-neutral planning and governance workspace built around a strict semantic model.
-
-> **Unknown is not zero.**
-
-Estimate, commitment, demand, allocation, forecast and baseline are intentionally different objects.
-
-</td>
-<td width="50%" valign="top">
-
-### What it demonstrates
-
-- portfolio and project planning
-- resource demand and allocation
-- scenario planning
-- approved baselines
-- provider facts vs planner facts
-- attention signals with provenance
-- Jira Cloud / Planner Native boundaries
-- deterministic planning logic
-
-</td>
+<td width="20%" align="center"><b>Next.js</b><br/><sub>application shell</sub></td>
+<td width="20%" align="center"><b>Node 24</b><br/><sub>runtime</sub></td>
+<td width="20%" align="center"><b>PostgreSQL</b><br/><sub>planning state</sub></td>
+<td width="20%" align="center"><b>Jira Cloud</b><br/><sub>provider boundary</sub></td>
+<td width="20%" align="center"><b>Explicit state</b><br/><sub>unknown ≠ zero</sub></td>
 </tr>
 </table>
 
-<img src="./assets/actual-surfaces.svg" width="100%" alt="Delivery Planner surfaces"/>
-
-<br/>
+<p align="center"><img src="./assets/actual-surfaces.svg" width="100%" alt="Product surfaces"/></p>
 
 <table>
 <tr>
-<td width="52%" valign="top">
-<img src="./assets/core-model.svg" width="100%" alt="Planning core model"/>
-</td>
-<td width="48%" valign="top">
-
-### Planning semantics
-
-The product is designed so that the UI cannot silently rewrite the meaning of the underlying data.
-
-A provider may report execution facts. The planner still owns its own estimates, demand, allocation, scenarios and baselines.
-
-</td>
+<td width="52%" valign="top"><img src="./assets/core-model.svg" width="100%" alt="Core model"/></td>
+<td width="48%" valign="top"><img src="./assets/overview.svg" width="100%" alt="Planning semantics"/></td>
 </tr>
 </table>
-
-<br/>
 
 <table>
 <tr>
-<td width="48%" valign="top">
-
-### Product surface
-
-Planning, delivery/control, governance, portfolio/people reporting, integrations and value tracking stay connected but semantically distinct.
-
-</td>
-<td width="52%" valign="top">
-<img src="./assets/features.svg" width="100%" alt="Product surface"/>
-</td>
+<td width="50%" valign="top"><img src="./assets/features.svg" width="100%" alt="Product surface"/></td>
+<td width="50%" valign="top"><img src="./assets/architecture-visual.svg" width="100%" alt="Architecture"/></td>
 </tr>
 </table>
 
-<img src="./assets/overview.svg" width="100%" alt="Planning semantics"/>
+<p align="center"><img src="./assets/flow-visual.svg" width="100%" alt="Decision path"/></p>
+<p align="center"><img src="./assets/engineering-signature.svg" width="100%" alt="Engineering signature"/></p>
 
-<br/>
+<details>
+<summary><b>Engineering notes</b></summary>
 
-<table>
-<tr>
-<td width="52%" valign="top">
-<img src="./assets/architecture-visual.svg" width="100%" alt="Architecture"/>
-</td>
-<td width="48%" valign="top">
+- Estimate ≠ commitment
+- Demand ≠ allocation
+- Forecast ≠ baseline
+- Provider facts remain separate from planner-owned facts
+- Revision history is preserved instead of overwritten
+- Derived signals retain basis and provenance
+- Architecture and domain examples are sanitised because the implementation is private
 
-### Architecture
-
-A modular Next.js / Node.js application with:
-
-- pure planning rules in the domain layer
-- PostgreSQL persistence
-- worker/integration paths for provider sync
-- explicit capability reporting
-- deterministic calculations
-- quality gates around changes
-
-</td>
-</tr>
-</table>
-
-<img src="./assets/flow-visual.svg" width="100%" alt="Decision path"/>
-
-<br/>
-
-<img src="./assets/engineering-signature.svg" width="100%" alt="Engineering signature"/>
-
-<p align="center"><sub>Private source · public engineering showcase</sub></p>
+</details>
